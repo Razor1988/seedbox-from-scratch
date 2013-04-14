@@ -160,8 +160,8 @@ function getString
     clear
     echo "#"
     echo "#"
-    echo "# The Seedbox From Scratch Script"
-    echo "#   By Notos ---> https://github.com/Notos/"
+    echo "# The Seedbox From Scratch Script modded by seedboxes.li"
+    echo "#   By Notos (thanks) ---> https://github.com/Notos/"
     echo "#"
     echo "#"
     echo "#"
