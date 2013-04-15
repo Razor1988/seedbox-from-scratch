@@ -288,7 +288,7 @@ set -x verbose
 
 # 4.
 perl -pi -e "s/Port 22/Port $NEWSSHPORT1/g" /etc/ssh/sshd_config
-perl -pi -e "s/PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config
+perl -pi -e "s/PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
 perl -pi -e "s/#Protocol 2/Protocol 2/g" /etc/ssh/sshd_config
 perl -pi -e "s/X11Forwarding yes/X11Forwarding no/g" /etc/ssh/sshd_config
 
@@ -472,8 +472,8 @@ perl -pi -e "s/connect_from_port_20\=YES/#connect_from_port_20\=YES/g" /etc/vsft
 echo "listen_port=$NEWFTPPORT1" | tee -a /etc/vsftpd.conf >> /dev/null
 echo "ssl_enable=YES" | tee -a /etc/vsftpd.conf >> /dev/null
 echo "allow_anon_ssl=YES" | tee -a /etc/vsftpd.conf >> /dev/null
-echo "force_local_data_ssl=YES" | tee -a /etc/vsftpd.conf >> /dev/null
-echo "force_local_logins_ssl=YES" | tee -a /etc/vsftpd.conf >> /dev/null
+echo "force_local_data_ssl=NO" | tee -a /etc/vsftpd.conf >> /dev/null
+echo "force_local_logins_ssl=NO" | tee -a /etc/vsftpd.conf >> /dev/null
 echo "ssl_tlsv1=YES" | tee -a /etc/vsftpd.conf >> /dev/null
 echo "ssl_sslv2=NO" | tee -a /etc/vsftpd.conf >> /dev/null
 echo "ssl_sslv3=NO" | tee -a /etc/vsftpd.conf >> /dev/null
@@ -599,14 +599,14 @@ echo "<?php \$streampath = 'http://$IPADDRESS1/stream/view.php'; ?>" | tee /var/
 # 32.2 # FILEUPLOAD
 cd /var/www/rutorrent/plugins/
 svn co http://svn.rutorrent.org/svn/filemanager/trunk/fileupload
-chmod 775 /var/www/rutorrent/plugins/fileupload/scripts/upload
+chmod 777 /var/www/rutorrent/plugins/fileupload/scripts/upload
 wget -O /tmp/plowshare.deb http://plowshare.googlecode.com/files/plowshare_1~git20120930-1_all.deb
 dpkg -i /tmp/plowshare.deb
 apt-get --yes -f install
 
 # 32.2
 chown -R www-data:www-data /var/www/rutorrent
-chmod -R 755 /var/www/rutorrent
+chmod -R 777 /var/www/rutorrent
 
 #32.3
 
