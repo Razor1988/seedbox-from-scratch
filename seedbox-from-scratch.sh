@@ -567,13 +567,6 @@ bash /etc/seedbox-from-scratch/updatejkinit
 
 # 32.
 
-# Installing poweroff button on ruTorrent
-
-cd /var/www/rutorrent/plugins/
-wget http://rutorrent-logoff.googlecode.com/files/logoff-1.0.tar.gz
-tar -zxf logoff-1.0.tar.gz
-rm -f logoff-1.0.tar.gz
-
 # Installing Filemanager and MediaStream
 
 rm -f -R /var/www/rutorrent/plugins/filemanager
@@ -686,7 +679,7 @@ set +x verbose
 clear
 
 echo ""
-echo "<<< The Seedbox From Scratch Script >>>"
+echo "<<< The Seedbox From Scratch Script modded by seedboxes.li >>>"
 echo ""
 echo ""
 echo ""
